@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'authy',
+    'post',
 ]
 
 MIDDLEWARE = [
@@ -138,4 +139,4 @@ LOGIN_REDIRECT_URL = 'index'
 
 LOGOUT_REDIRECT_URL = 'login'
 
-LOGIN_REDIRECT_URL = '/user/login'
+#LOGIN_REDIRECT_URL = '/user/login'
