@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader
 from django.http import HttpResponse
 #from django.contrib.auth.models import User
@@ -27,6 +27,20 @@ def index(request):
     }
 
     return HttpResponse(template.render(context, request))
+
+@login_required
+def PostDetails(request, post_id):
+    post = get_object_or_404(Post, id=post_id) 
+
+    template = loader.get_template('post_detail.html')
+
+    context ={
+        'post': post,
+    }
+
+    return HttpResponse(template.render(context, request))
+
+
 
 @login_required
 def NewPost(request):
@@ -59,4 +73,17 @@ def NewPost(request):
 
     return render(request, 'newpost.html', context)
 
+@login_required
+def tags(request, tag_slug):
+    tag = get_object_or_404(Tag, slug=tag_slug)
+    posts = Post.objects.filter(tags=tag).order_by('-posted')
+
+    template = loader.get_template('tag.html')
+
+    context ={
+        'posts':posts,
+        'tag':tag,
+    }
+
+    return HttpResponse(template.render(context, request))
 

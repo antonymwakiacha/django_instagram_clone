@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 import uuid
+from django.urls import reverse
 # Create your models here.
 
 from django.db.models.signals import post_save
@@ -19,8 +20,8 @@ class Tag(models.Model):
         verbose_name ='Tag'
         verbose_name_plural = 'Tags'
 
-    # def get_absolute_url(self):
-    #     return reverse('tags', args=[self.slug])
+    def get_absolute_url(self):
+        return reverse('tags', args=[self.slug])
 
     def __str__(self):
         return self.title

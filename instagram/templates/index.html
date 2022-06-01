@@ -1,89 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="css/bulma.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-  </head>
-  <body>
 
-
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="img/i.png" width="64" height="64">
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">
-        <span class="material-icons">home</span>
-        Home
-      </a>
-
-      <a class="navbar-item">
-        <span class="material-icons">explore</span>
-        Explore
-      </a>
-
-      <a class="navbar-item">
-        <span class="material-icons">notifications</span>
-        
-        Notifications
-      </a>
-
-      <a class="navbar-item">
-        <span class="material-icons">inbox</span>
-        Inbox
-      </a>
-
-      <a class="navbar-item">
-        <span class="material-icons">face</span>
-        Profile
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-        Settings
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            Change password
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <a class="navbar-item">
-            Report an issue
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Log out
-          </a>
-        </div>
-      </div>
-    </div>
-
-    
-  </div>
-</nav> -->
-<!-- 
-  <section class="section">
-    <div class="container"> -->
 {% block content %}
       <div class="columns is-mobile is-centered">
         <div class="column is-half">
@@ -92,7 +10,7 @@
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by3">
-            <img src="{{ post_item.picture.url }}" alt="Placeholder image">
+            <a href="{{ post.get_absolute_url }}"><img src="{{ post_item.picture.url }}" alt="Placeholder image"></a>
           </figure>
         </div>
         <div class="card-content">
