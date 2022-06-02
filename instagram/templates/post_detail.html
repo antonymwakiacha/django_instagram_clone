@@ -31,18 +31,29 @@
 
             </div>
 
+          {% if favorited is True%}
           <div class="media-right">
-            <a href=""><i class="material-icons">save_alt</i></a>
+            <a href="{% url 'postfavorite' post.id %}"><i class="material-icons has-text-danger">save_alt</i></a>
+            <p>Remove post</p>
+          </div>
+          {% else %}
+          <div class="media-right">
+            <a href="{% url 'postfavorite' post.id %}"><i class="material-icons has-text-success">save_alt</i></a>
             <p>Save post</p>
           </div>
 
+          {% endif %}
+          
+
           <div class="media-right">
-            <a href="{% url 'postlike' post.id %}"><i class="material-icons">favorite</i></a>
+            <a href="{% url 'postlike' post.id %}"><i class="material-icons has-text-danger">favorite</i></a>
             <p>{{ post.likes }} Likes</p>
           </div>
 
         </div>
-      </div>
+
+        </div>
+      
       </div>
 
       
@@ -67,8 +78,9 @@
       
         
         </div>
+        </div>
       </article>
-      
+      <div class="card-content">
       <article class="media">
         <figure class="media-left">
           <p class="image is-64x64">
