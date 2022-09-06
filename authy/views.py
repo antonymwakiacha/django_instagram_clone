@@ -145,3 +145,5 @@ def follow(request,username, option):
 
 	except User.DoesNotExist:
 		return HttpResponseRedirect(reverse('profile', args=[username]))
+
+#Comment on my view

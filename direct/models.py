@@ -40,3 +40,4 @@ class Message(models.Model):
             })
 
         return users
+
